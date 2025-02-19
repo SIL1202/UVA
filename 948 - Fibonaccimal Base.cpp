@@ -14,7 +14,7 @@ int main() {
   }
 
   vector<int> fi{1, 2};
-  while (fi[fi.back() - 1] <= Max) {
+  while (fi.back() <= Max) {
     fi.push_back(fi.back() + fi[fi.size() - 2]);
   }
 
