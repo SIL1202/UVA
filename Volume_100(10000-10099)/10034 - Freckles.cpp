@@ -44,9 +44,7 @@ int main() {
         continue;
       visited[u] = true;
       total += d;
-      for (int i = 0; i < adj[u].size(); i++) {
-        int v = adj[u][i].first;
-        double w = adj[u][i].second;
+      for (const auto &[v, w] : adj[u]) {
         if (!visited[v])
           pq.emplace(w, v);
       }
