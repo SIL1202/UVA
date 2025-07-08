@@ -19,6 +19,7 @@
 // KMP 的關鍵：
 //   lps[len - 1] 表示整段 s[i..j] 的最長 border 長度（前綴 = 後綴）
 //   patternLen = len - lps[len - 1] 是最短可重複 pattern 的長度
+//
 // ---------------------------------------------------
 
 #include <iostream>
