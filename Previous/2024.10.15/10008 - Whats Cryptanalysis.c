@@ -43,3 +43,48 @@ int main() {
   }
   return 0;
 }
+/*
+#include <algorithm>
+#include <cctype>
+#include <iostream>
+#include <string>
+#include <utility>
+#include <vector>
+
+using namespace std;
+
+int main() {
+  int n;
+  cin >> n;
+  cin.ignore();
+
+  vector<pair<int, int>> node(26, make_pair(0, 0)); // {index, cnt}
+  for (int i = 0; i < 26; ++i)
+    node[i].first = i;
+
+  while (n--) {
+    string line;
+    getline(cin, line);
+    for (char c : line) {
+      if (isalpha(c)) {
+        char up = toupper(c);
+        ++node[up - 'A'].second;
+      }
+    }
+  }
+
+  sort(node.begin(), node.end(),
+       [](const pair<int, int> &a, const pair<int, int> &b) {
+         if (a.second != b.second)
+           return a.second > b.second;
+         return a.first < b.first;
+       });
+
+  for (auto &p : node) {
+    if (p.second > 0)
+      cout << (char)(p.first + 'A') << " " << p.second << '\n';
+  }
+
+  return 0;
+}
+*/
